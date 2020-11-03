@@ -4,7 +4,7 @@ import sys
 import numpy as np
 import scipy
 import scipy.io.wavfile
-from scikits.talkbox.features import mfcc
+from python_speech_features import mfcc
 
 from utils import GENRE_DIR, CHART_DIR, GENRE_LIST
 
@@ -15,7 +15,7 @@ def write_ceps(ceps, fn):
     base_fn, ext = os.path.splitext(fn)
     data_fn = base_fn + ".ceps"
     np.save(data_fn, ceps)
-    print "Written ", data_fn
+    print("Written ", data_fn)
 
 
 def create_ceps(fn):
@@ -56,7 +56,7 @@ def create_ceps_test(fn):
     base_fn, ext = os.path.splitext(fn)
     data_fn = base_fn + ".ceps"
     np.save(data_fn, ceps)
-    print "Written ", data_fn
+    print("Written ", data_fn)
     return data_fn
 
 
@@ -79,8 +79,8 @@ if __name__ == "__main__":
     for subdir, dirs, files in os.walk(GENRE_DIR):
         traverse = list(set(dirs).intersection( set(GENRE_LIST) ))
         break
-    print "Working with these genres --> ", traverse
-    print "Starting ceps generation"     
+    print("Working with these genres --> ", traverse)
+    print("Starting ceps generation")     
     for subdir, dirs, files in os.walk(GENRE_DIR):
         for file in files:
             path = subdir+'/'+file
@@ -90,4 +90,4 @@ if __name__ == "__main__":
                     create_ceps(path)
                     
     stop = timeit.default_timer()
-    print "Total ceps generation and feature writing time (s) = ", (stop - start) 
+    print("Total ceps generation and feature writing time (s) = ", (stop - start))
