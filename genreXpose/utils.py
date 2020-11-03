@@ -16,22 +16,22 @@ TEST_DIR = config["TEST_DIR"]
 GENRE_LIST = config["GENRE_LIST"]
 
 if GENRE_DIR is None or GENRE_DIR is "":
-    print "Please set GENRE_DIR in config.cfg"
+    print("Please set GENRE_DIR in config.cfg")
     sys.exit(1)
 
 elif TEST_DIR is None or TEST_DIR is "":
-    print "Please set TEST_DIR in config.cfg" 
+    print("Please set TEST_DIR in config.cfg")
     sys.exit(1)    
 
 elif GENRE_LIST is None or len(GENRE_LIST)==0:
-    print "Please set GENRE_LIST in config.cfg" 
+    print("Please set GENRE_LIST in config.cfg")
     sys.exit(1)
 
 else:
-    print "Variables defined in config.cfg :"
-    print "GENRE_DIR ==> ", GENRE_DIR
-    print "TEST_DIR ==> ", TEST_DIR
-    print "GENRE_LIST ==> "," || ".join(x for x in GENRE_LIST)
+    print("Variables defined in config.cfg :")
+    print("GENRE_DIR ==> ", GENRE_DIR)
+    print("TEST_DIR ==> ", TEST_DIR)
+    print("GENRE_LIST ==> "," || ".join(x for x in GENRE_LIST))
 
     
 DATA_DIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), "data")
@@ -75,7 +75,7 @@ def convert_dataset_to_wav(file_name):
                 os.remove(path)
 
     stop = timeit.default_timer()
-    print "Conversion time = ", (stop - start) 
+    print("Conversion time = ", (stop - start)) 
 
 
 def plot_confusion_matrix(cm, genre_list, name, title):
