@@ -44,7 +44,7 @@ MODEL_DIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), "saved_mod
 
 for d in [DATA_DIR, CHART_DIR, MODEL_DIR]:
     if not os.path.exists(d):
-        os.mkdir(d)
+        os.makedirs(d)
 
 
 def convert_any_to_wav(filename):
