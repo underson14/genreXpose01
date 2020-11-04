@@ -1,13 +1,13 @@
 import os
 import timeit
 import numpy as np
+import joblib
 from collections import defaultdict
 from sklearn.metrics import roc_curve
 from sklearn.metrics import auc
 from sklearn.model_selection import ShuffleSplit
 from sklearn.linear_model.logistic import LogisticRegression
 from sklearn.metrics import confusion_matrix
-from sklearn.externals import joblib
 from utils import GENRE_LIST, GENRE_DIR, TEST_DIR
 from utils import plot_confusion_matrix, plot_roc_curves
 from ceps import read_ceps, read_ceps_test
@@ -22,7 +22,7 @@ def train_model(X, Y, name, plot=False):
     """
     labels = np.unique(Y)
 
-    cv = ShuffleSplit(n=len(X), n_splits=1, test_size=0.3, random_state=0)
+    cv = ShuffleSplit(len(X), n_splits=1, test_size=0.3, random_state=0)
 
     train_errors = []
     test_errors = []
