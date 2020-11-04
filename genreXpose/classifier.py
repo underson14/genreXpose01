@@ -22,7 +22,7 @@ def train_model(X, Y, name, plot=False):
     """
     labels = np.unique(Y)
 
-    cv = ShuffleSplit(n=len(X), n_iterations=1, test_fraction=0.3, indices=True, random_state=0)
+    cv = ShuffleSplit(len(X), n_iterations=1, test_fraction=0.3, indices=True, random_state=0)
 
     train_errors = []
     test_errors = []
