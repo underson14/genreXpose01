@@ -9,8 +9,7 @@ from matplotlib import pylab
 #    Don't modify below this line
 ###################################################
 config = {}
-exec(open("/content/genreXpose01/genreXpose/config.cfg").read(), config)
-exec.close()
+exec(open("/content/genreXpose01/genreXpose/config.cfg").read(), config).close()
 
 GENRE_DIR = config["GENRE_DIR"]
 TEST_DIR = config["TEST_DIR"]
