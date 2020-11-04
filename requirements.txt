@@ -1,3 +1,4 @@
+joblib
 python_speech_features
 numpy
 pydub
