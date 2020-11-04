@@ -4,7 +4,7 @@ import numpy as np
 from collections import defaultdict
 from sklearn.metrics import roc_curve
 from sklearn.metrics import auc
-from sklearn.cross_validation import ShuffleSplit
+from sklearn.model_selection import ShuffleSplit
 from sklearn.linear_model.logistic import LogisticRegression
 from sklearn.metrics import confusion_matrix
 from sklearn.externals import joblib
