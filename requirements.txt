@@ -2,7 +2,7 @@ joblib
 python_speech_features
 numpy
 pydub
-scikit-learn
+scikit-learn==0.23.2
 statsmodels
 scikits.talkbox
 scipy
