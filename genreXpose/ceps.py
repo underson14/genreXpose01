@@ -86,8 +86,8 @@ if __name__ == "__main__":
             path = subdir+'/'+file
             if path.endswith("wav"):
                 tmp = subdir[subdir.rfind('/',0)+1:]
-                if tmp in traverse:
-                    create_ceps(path)
+                #if tmp in traverse:
+                    #create_ceps(path)
                     
     stop = timeit.default_timer()
     print("Total ceps generation and feature writing time (s) = ", (stop - start))
